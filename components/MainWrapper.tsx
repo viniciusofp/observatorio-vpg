@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { MenuIcon, X } from 'lucide-react';
 import { useState } from 'react';
 import Logos from './Logos';
+import Nav from './Nav';
 
 export interface DataPointInterface {
   id: number;
@@ -33,7 +34,10 @@ export default function MainWrapper(props: MainWrapperProps) {
     properties: DataPointInterface;
   } | null>(null);
   return (
-    <div className="flex h-svh">
+    <div className="md:flex h-svh">
+      <div className="md:hidden p-3 pb-0">
+        <Nav />
+      </div>
       <div
         className={cn(
           'w-full md:w-1/2 lg:w-2/5 max-w-xl shrink-0 bg-everglade-50',
@@ -42,10 +46,7 @@ export default function MainWrapper(props: MainWrapperProps) {
       >
         <ScrollArea className="h-svh w-full border-l p-3">
           <div className="grid gap-2">
-            <div className="w-full border border-dashed p-4 flex justify-between items-center gap-3 bg-white">
-              <Logo className="h-12 lg:h-14 w-fit" />
-              <MenuIcon className="size-6" />
-            </div>
+            <Nav />
             {selectedPoint ? (
               <div className="w-full border border-dashed p-4  gap-3 bg-white relative">
                 <div
@@ -130,7 +131,7 @@ export default function MainWrapper(props: MainWrapperProps) {
         </ScrollArea>
       </div>
 
-      <div className="w-full h-full p-3">
+      <div className="w-full h-[calc(100svh-94px)] md:h-full p-3">
         <MainMap
           selectedPoint={selectedPoint}
           setSelectedPoint={setSelectedPoint}
