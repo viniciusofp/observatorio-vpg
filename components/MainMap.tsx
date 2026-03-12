@@ -76,7 +76,8 @@ export function MainMap({ selectedPoint, setSelectedPoint }: MainMapProps) {
             focusAfterOpen={false}
             closeButton
           >
-            <div className="space-y-1.5 xl:space-y-2 p-1 max-w-xs">
+            <div className="space-y-1.5 xl:space-y-2 p-1 max-w-3xs">
+              {/* <div className="w-8 h-8 rounded-full mb-3 bg-everglade-900 -rotate-6"></div> */}
               <p className="text-base font-bold text-balance leading-tight">
                 {selectedPoint.properties.name}
               </p>
