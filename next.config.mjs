@@ -4,7 +4,7 @@ import { withPayload } from '@payloadcms/next/withPayload';
 const nextConfig = {
   // Your Next.js config here
   output: 'export',
-  basePath: process.env.PAGES_BASE_PATH
+  basePath: '/observatorio-vpg'
 };
 
 // Make sure you wrap your `nextConfig`
